@@ -1,3 +1,5 @@
-export const pokemonSelector = (state: any) => {
+import { IAppState } from "./appState"
+
+export const pokemonSelector = (state: IAppState) => {
     return state
 }

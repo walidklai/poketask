@@ -7,4 +7,5 @@ export interface IDetails {
     id: number,
     height: number;
     weight: number
+    img:string
 }

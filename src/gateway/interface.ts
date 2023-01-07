@@ -1,6 +1,6 @@
-import { PokemonListDto } from "./dto/PokemonListDto"
+import { IDetails, IPokemon } from "../core/domain/Pokemon"
 
-export interface IPokemonGateway{
-    getPokemonsList:()=>Promise<PokemonListDto[]>
-    getPokemonInfos:(name:string)=>Promise<any>
+export interface IPokemonGateway {
+    getPokemonsList: () => Promise<IPokemon[]>
+    getPokemonInfos: (name: string) => Promise<IDetails>
 }

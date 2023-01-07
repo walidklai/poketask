@@ -6,24 +6,159 @@ body {
   font-family: sans-serif;
 }
 
+.app-container {
+  padding: 10px;
+}
+
+.poke-data-container {
+  display: flex;
+}
+
+.deck-container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.poke-data-container > * {
+  border: 1px solid red;
+  border-radius: 5px;
+  width: 100%;
+  min-width: 100px;
+  box-shadow: 1px 1px 20px 1px grey;
+}
+
+@media (max-width: 750px){
+  .poke-data-container{
+    flex-direction: column;
+  }
+}
+
+.main-hr {
+  width: 2px;
+  border-color: red;
+  background-color: red;
+}
+
 .poke-container {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: space-evenly;
 }
 
 .poke-card {
-  border: 1px solid black;
-  width: max-content;
-  height: 50px;
-  padding: 5px;
+  text-align: center;
+}
+
+.poke-details {
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-  cursor: pointer;
-  margin: 5px;
 }
 
-.poke-details{
-  border: 1px solid red;
+.poke-ball {
+  max-width: 100px;
+  max-height: 100px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.poke-ball:hover {
+  transform: scale(0.5) rotate(360deg);
+}
+
+.poke-label {
+}
+
+.search-style {
+  outline: none;
+  padding: 0.5%;
+  border-radius: 25px;
+  border-top-color: red;
+  margin-bottom: 10px;
+}
+
+.deck-container {
+  text-align: center;
+}
+
+.details-container > h3{
+  text-align: center;
+}
+
+img {
+  width: 100px;
+  height: 100px;
+}
+
+.pagination-container {
+  display: flex;
+  list-style-type: none;
+}
+.pagination-container .pagination-item {
+  padding: 0 12px;
+  height: 32px;
+  text-align: center;
+  margin: auto 4px;
+  color: rgba(0, 0, 0, 0.87);
+  display: flex;
+  box-sizing: border-box;
+  align-items: center;
+  letter-spacing: 0.01071em;
+  border-radius: 16px;
+  line-height: 1.43;
+  font-size: 13px;
+  min-width: 32px;
+}
+.pagination-container .pagination-item.dots:hover {
+  background-color: transparent;
+  cursor: default;
+}
+.pagination-container .pagination-item:hover {
+  background-color: rgba(255, 0, 0, 0.45);
+  cursor: pointer;
+}
+.pagination-container .pagination-item.selected {
+  background-color: rgba(255, 0, 0, 0.45);
+}
+.pagination-container .pagination-item .arrow::before {
+  position: relative;
+  /* top: 3pt;
+  Uncomment this to lower the icons as requested in comments*/
+  content: "";
+  /* By using an em scale, the arrows will size with the font */
+  display: inline-block;
+  width: 0.4em;
+  height: 0.4em;
+  border-right: 0.12em solid rgba(0, 0, 0, 0.87);
+  border-top: 0.12em solid rgba(0, 0, 0, 0.87);
+}
+.pagination-container .pagination-item .arrow.left {
+  transform: rotate(-135deg) translate(-50%);
+}
+.pagination-container .pagination-item .arrow.right {
+  transform: rotate(45deg);
+}
+.pagination-container .pagination-item.disabled {
+  pointer-events: none;
+}
+.pagination-container .pagination-item.disabled .arrow::before {
+  border-right: 0.12em solid rgba(0, 0, 0, 0.43);
+  border-top: 0.12em solid rgba(0, 0, 0, 0.43);
+}
+.pagination-container .pagination-item.disabled:hover {
+  background-color: transparent;
+  cursor: default;
+}
+
+
+@counter-style pokemon{
+  system:cyclic;
+  symbols:"\1F449";
+  suffix:" ";
+}
+
+ul{
+  list-style: pokemon;
 }

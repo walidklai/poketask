@@ -7,7 +7,8 @@ export class PokemonDetailsMapper {
             name: dto?.name,
             height: dto?.height,
             id: dto?.id,
-            weight: dto?.weight
+            weight: dto?.weight,
+            img: dto?.sprites?.front_default
         }
     }
 }

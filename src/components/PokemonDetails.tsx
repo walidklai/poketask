@@ -1,22 +1,45 @@
-import React from 'react'
-import { IDetails } from '../core/domain/Pokemon'
+import React from "react";
+
+import { IDetails } from "../core/domain/Pokemon";
 
 interface PokemonDetailsProps {
-    className?: string
-    details: IDetails
+  className?: string;
+  details: IDetails;
 }
 
-const PokemonDetails: React.FC<PokemonDetailsProps> = ({ details, className }) => {
-    return (
-        <div className={className}>
+const PokemonDetails: React.FC<PokemonDetailsProps> = ({
+  details,
+  className,
+}) => {
+  return (
+    <div className="details-container">
+      {" "}
+      <h3>Details</h3>
+      <div className={className}>
+        {details.name ? (
+          <>
+            <img src={details.img} />
             <ul>
-                <li>id: {details.id}</li>
-                <li>name: {details.name}</li>
-                <li>weight: {details.weight}</li>
-                <li>height: {details.height}</li>
+              <li>
+                <strong>id:</strong> {details.id}
+              </li>
+              <li>
+                <strong>name:</strong> {details.name}
+              </li>
+              <li>
+                <strong>height:</strong> {details.height}
+              </li>
+              <li>
+                <strong>weight:</strong> {details.weight}
+              </li>
             </ul>
-        </div>
-    )
-}
+          </>
+        ) : (
+          <div>Please select a Pokemon</div>
+        )}
+      </div>
+    </div>
+  );
+};
 
-export default PokemonDetails
+export default PokemonDetails;

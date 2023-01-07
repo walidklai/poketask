@@ -1,21 +1,23 @@
-import React, { useState } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
-import { searchPokemonUseCase } from '../core/usecases/searchPokemonUseCase'
-import { pokemonSelector } from '../store/pokemonSelector'
+import React from "react";
+import { useDispatch } from "react-redux";
+import { searchPokemonUseCase } from "../core/usecases/searchPokemonUseCase";
 
-interface SearchItemProps { }
+interface SearchItemProps {}
 
 const SearchItem: React.FC<SearchItemProps> = () => {
-  const [searchItem, setSearchItem] = useState("")
-  const { list } = useSelector(pokemonSelector)
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
 
   const handleChange = (e: any) => {
-    dispatch(searchPokemonUseCase(e.target.value) as any)
-  }
+    dispatch(searchPokemonUseCase(e.target.value) as any);
+  };
   return (
-    <input placeholder='enter a pokemon name' type="text" onChange={handleChange} />
-  )
-}
+    <input
+      placeholder="enter a pokemon name"
+      type="text"
+      onChange={handleChange}
+      className="search-style"
+    />
+  );
+};
 
-export default SearchItem
+export default SearchItem;
